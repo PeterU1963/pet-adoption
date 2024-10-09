@@ -7,3 +7,16 @@ async function start() {
 }
 
 start();
+
+
+
+async function petsArea() {
+    const petsPromise = await fetch('https://learnwebcode.github.io/bootcamp-pet-data/pets.json');
+    const petsData = await petsPromise.json();
+    // () => {} ist eine Inline-Funktion
+    petsData.forEach(pet => {
+        console.log(pet.name);
+    });
+}
+
+petsArea();
